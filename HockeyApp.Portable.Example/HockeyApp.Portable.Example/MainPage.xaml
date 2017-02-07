@@ -7,6 +7,6 @@
   <Button Text="Welcome to Xamarin Forms!"
            VerticalOptions="Center"
            HorizontalOptions="Center"
-           Clicked="Feedback_Clicked"/>
+           Command="{Binding FeedbackCommand}"/>
 
 </ContentPage>

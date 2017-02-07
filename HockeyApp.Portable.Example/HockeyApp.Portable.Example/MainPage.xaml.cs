@@ -1,4 +1,5 @@
 ﻿using HockeyApp.Portable.Example.Services;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,9 @@ namespace HockeyApp.Portable.Example
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = ServiceLocator.Current.GetInstance<MainPageViewModel>();
         }
 
-        private void Feedback_Clicked(object sender, EventArgs e)
-        {
-            HockeyManager.Current.GetFeedback();
-        }
+       
     }
 }

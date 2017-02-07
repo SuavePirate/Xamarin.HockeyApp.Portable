@@ -13,7 +13,10 @@ namespace HockeyApp.Portable.Example
         public App()
         {
             InitializeComponent();
-            HockeyManager.Current.Init();
+            new IoCService().RegisterViewModels();
+            //HockeyManager.Current.Init();
+            //DependencyService.Get<IHockeyService>().Init();
+            new LocatorService().HockeyService.Init();
             MainPage = new HockeyApp.Portable.Example.MainPage();
         }
 

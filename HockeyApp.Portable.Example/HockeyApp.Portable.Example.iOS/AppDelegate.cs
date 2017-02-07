@@ -24,7 +24,9 @@ namespace HockeyApp.Portable.Example.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            HockeyManager.Current = new HockeyService();
+            //HockeyManager.Current = new HockeyService();
+            var service = new iOSIoCService();
+            service.RegisterServices();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
